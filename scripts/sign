@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+# Signs a arbitrary file.
+#
+# Usage:
+#       sign <filename>
+#
+#openssl pkeyutl -sign -inkey ./id_rsa -in $1
+
+openssl dgst -sha256 -sign "$(whoami)s Sign Key.key" -out sign.txt.sha256 $1

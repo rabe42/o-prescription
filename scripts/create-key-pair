@@ -1,0 +1,4 @@
+#!/bin/bash
+#ssh-keygen -f "./$(whoami)_rsa"
+
+openssl req -nodes -x509 -sha256 -newkey rsa:4096 -keyout "$(whoami)s Sign Key.key" -out "$(whoami)s Sign Key.crt" -days 365 -subj "/C=NL/ST=Zuid Holland/L=Rotterdam/O=Sparkling Network/OU=IT Dept/CN=$(whoami)s Sign Key"
