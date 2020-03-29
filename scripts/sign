@@ -3,8 +3,6 @@
 # Signs a arbitrary file.
 #
 # Usage:
-#       sign <filename>
+#       sign-with <signature-file> <file>
 #
-#openssl pkeyutl -sign -inkey ./id_rsa -in $1
-
-openssl dgst -sha256 -sign "$(whoami)s Sign Key.key" -out sign.txt.sha256 $1
+openssl dgst -sha256 -sign "$(whoami)s Sign Key.key" -out $1 $2

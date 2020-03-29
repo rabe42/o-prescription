@@ -1,2 +1,6 @@
 #!/bin/bash
-openssl dgst -sha256 -verify  <(openssl x509 -in "$(whoami)s Sign Key.crt"  -pubkey -noout) -signature sign.txt.sha256 $1
+#
+# Usage:
+#   check-signature <signature-file> <file>
+#
+openssl dgst -sha256 -verify  <(openssl x509 -in "$(whoami)s Sign Key.crt"  -pubkey -noout) -signature $1 $2
